@@ -97,11 +97,56 @@ console.log(secretName(potter));
 /**Display online status for a list of users.
  * 
  * Example:
- * - `onlineStatus(['mockIng99', 'J0eyPunch', 'glassedFer'])` should return `'mockIng99, J0eyPunch and 1 more online'`.
+ * - `onlineStatus(['mockIng99', 'J0eyPunch', 'glassedFer'])` 
+ * should return `'mockIng99, J0eyPunch and 1 more online'`.
  * 
 */
+// 1. Obtener la cantidad total de usuarios
+// 2. Calcular usuarios restrantes del total eliminando los priemros dos.
+// 3. Obtener los primeros 2
+// 4. Imprimimos el mensaje
 
+const users = ["mockIng99", "J0eyPunch", "glassedFer", "Mo0o0x56"];
 
+function getLength(arr) {
+    return arr.length;
+}
+
+function calcRemaining(total) {
+    return total - 2;
+}
+
+function getUsers(arr) {
+    const users = arr[0] + arr[1];
+    return users;
+}
+
+function onlineStatus(arr) {
+    const total = getLength(arr);
+    const rest = calcRemaining(total);
+    const firstUsers = getUsers(arr);
+
+    console.log(`Users: ${firstUsers} and ${rest} are online`);
+}
+onlineStatus(users);
+
+//Version 2 del ejercicio anterior
+// function statusOnline(){
+// const onlineStatus = arr => {
+//     if (arr.length !== 0) {
+//         if(arr.length >= 3) {
+//             const firstUsers = getUsers(arr);
+//             console.log(`Users: ${firstUsers}, and ${arr.length - 2} are online`);
+//         } else {
+//             console.log(`Users: ${arr.join(',')} are online`);
+//         } else {
+//             console.log(`There are no users online`);
+//         }
+// }
+
+// console.log(users.slice(0, 2));
+
+ 
 
 //Array of Multiples
  
@@ -114,7 +159,19 @@ console.log(secretName(potter));
  * 
  */
 
+const arrayMultiplos = (number, length) => {
+    const array = [];
+    const value = number;
 
+    for (let index = 0; index < length; index++) {
+        array.push(number);
+        number += value;
+    }
+    return array;
+}
+
+console.log(arrayMultiplos(2, 10));
+console.log(arrayMultiplos(17, 6));
 
 //Positive dominance in Array
  
@@ -127,8 +184,30 @@ console.log(secretName(potter));
  * - `positiveDom([-1, -3, -5, 4, 6767])` should return `false`.
  * 
 */
+// 1. Loop por cada elemento
+// 2. Total de positivos
+// 3. Cantidad total y dividir sobre 2
+// 4. Comparamos e imprimimos boolean
 
+const numArr = [-1000, -1, 50, 1, 2, 5];
+const negativeArr = [-1000, -1, -50, -1, 5, 2];
 
+function positiveArr(arr) {
+    let positiveCount = 0
+    arr.forEach((num) => {
+        if(num > 0) {
+            positiveCount++;
+        }
+    })
+    const mid = arr.length / 2;
+    return positiveCount > mid;
+}
+//Imprime true
+const res = positiveArr(numArr);
+console.log(res);
+//Imprime false
+//const res = positiveArr(negativeArr);
+//console.log(res);
 
 //Antipodal Average
  
@@ -143,3 +222,23 @@ console.log(secretName(potter));
  * - For the array `[1,2,3,5,22,6]`, the result should be `[3.5, 12, 4]`.
  * 
 */
+
+let numArray = [1, 2, 3, 5, 22, 6];
+
+const antipodalAvg = array => {
+    const arrayReturn = [];
+
+    for (let i = 0, j = array.length - 1; i < j; i++, j--) {
+        const operation = (array[i] + array [j]) / 2;
+        arrayReturn.push(operation);
+    }
+    return arrayReturn;
+}
+
+console.log(antipodalAvg(numArray));
+
+//const array = [1, 2, 3, 5, 22, 6];
+//for (let index = array.length -1; index >= 0; index--) {
+//    const element = array[index];
+//    console.log(element);
+//}
