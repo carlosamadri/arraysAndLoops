@@ -6,12 +6,12 @@
  * like: `The film {film} is one of my favorites.`
  */
 
-//let userName = prompt("Introduce your username: ");
-//let userAge = prompt("Introduce your age: ");
-//let favMovies = prompt("Finally introduce your favorite movies separated by commas: ");
-//let arrayMovies = favMovies.split(",");
+let userName = prompt("Introduce your username: ");
+let userAge = prompt("Introduce your age: ");
+let favMovies = prompt("Finally introduce your favorite movies separated by commas: ");
+let arrayMovies = favMovies.split(",");
 
-//console.log("My name is " + userName + ". I'm " + userAge + " years old and the film " + arrayMovies[0] + " is one of my favorites.");
+console.log("My name is " + userName + ". I'm " + userAge + " years old and the film " + arrayMovies[0] + " is one of my favorites.");
 
  // Highest number
 /**
